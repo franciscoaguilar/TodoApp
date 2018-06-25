@@ -1,14 +1,17 @@
-.purple{
-  background-color: purple;
-  height: 60px;
-  width: 100%; 
-
+#FORM{
+  color: red;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
 }
-.red{
-  background-color: red;
-
+input{
+  width: 15%  ;
 }
-.green{
-  background-color: green;
-  height: 60px;
+
+.todo{
+  display: flex;
+  justify-content: center;
+  padding: 3%;
+  background-color: orange;
 }
