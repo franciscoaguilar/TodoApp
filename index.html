@@ -8,6 +8,11 @@
   <title>Todo-app</title>
     <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 <body>
@@ -17,7 +22,13 @@
     <div class="col-md-12">
         <form action="" name = "taskform" id="FORM">
             <input type="text" id="usersInput"  placeholder="What else woul you like to add "><br>
-            <button type="button" id="btn" name="button">ADD</button>
+            <button type="button" id="btn" name="button"><i class="fas fa-plus"></i>
+
+
+
+
+
+ADD</button>
 
         <form>
 </div>
@@ -27,17 +38,19 @@
 <div class="todo">
   <div class="col-md-8">
   <h1>TASK</h1>
-</div>
+ </div>
   <ul id="list">
-    <li>Program </li>
-    <li>pay water   </li>
+
   </ul>
 </div>
+<div class="todoCompleted">
+  <div class="col-md-8">
+  <h1>completed</h1>
+    </div>
+  <ul id = "doneList">
 
-  <ul id = "done">
-
-</ul>
-
+  </ul>
+</div>
 <!-- <form action="" name ="todoinput">-->
 
 <!-- </form> -->
