@@ -2,9 +2,11 @@
 const myAddBtn = document.getElementById('btn'); //create a variable to be able to acess the button
 // const deleteBtn = document.getElementsByTagName('button');
 let todos = [];
+let todosCompleted = [];
 // function Task(task){
 //   this.task = task;
 // }
+
  myAddBtn.addEventListener('click', e =>{
 
   let createElementLi = document.createElement("LI"); //create a new list element (just the bullet)
@@ -14,7 +16,6 @@ let todos = [];
   createSpanElement.appendChild(newTextNode);
 
 
-console.log(newTextNode, "bla");
 
    newTextNode.className = "inputSpace";
   let deleteButtonElement = document.createElement('button'); //creates a button, ill be making this a delete butoon
@@ -67,10 +68,13 @@ checkboxElement.addEventListener('click', e =>{
 const checkBox = e.target.parentNode; // allow me to target the parents node of the checkbox
  let createCompletedLiElement = document.createElement('li'); ///create another LI element for the done list
  document.getElementById('doneList').appendChild(createCompletedLiElement);// acess the done list and add the li element that ive created on the above step
- createCompletedLiElement.append(checkBox.firstChild);// appends the users input (newTextNode) to the newly created li
+ let completedTask = createCompletedLiElement.append(checkBox.firstChild);// appends the users input (newTextNode) to the newly created li
+ todosCompleted.push(completedTask);
+ console.log(completedTask);
 checkBox.remove(); //removes the entire li element since i target the parentNode when i declared checkbox.
 })
 document.forms.taskform.reset();
+
 
 
 console.log(todos);
