@@ -9,13 +9,20 @@ let todos = [];
 
   let createElementLi = document.createElement("LI"); //create a new list element (just the bullet)
   let usersInput = document.getElementById('usersInput').value; //gets whatever tasked the user typed in
-  let newTextNode = document.createTextNode(usersInput); //create a new text node with whatever task the user typed in, so that i can later add to the list elemet
-// let elementsInputbox = document.createElement('input');
-// elementsInputbox.className = "inputBox";
+  let newTextNode = document.createTextNode(usersInput); //CONVERTS WHAT THE USERS WROTE TO A TEXT NODE
+  let createSpanElement = document.createElement('span');
+  createSpanElement.appendChild(newTextNode);
+
+
+console.log(newTextNode, "bla");
+
+   newTextNode.className = "inputSpace";
   let deleteButtonElement = document.createElement('button'); //creates a button, ill be making this a delete butoon
     deleteButtonElement.className = "fas fa-trash";
+
   let editButtonElement = document.createElement('button');// creates a button, ill be making this a edit butoon
     editButtonElement.className = "fas fa-edit";
+
   let checkboxElement = document.createElement('input');
   checkboxElement.setAttribute("type", "checkbox");
     checkboxElement.className = "checkboxBtn";
@@ -27,32 +34,31 @@ if (usersInput=='' ){ //edge casing make shure the users adds something
 else{
  document.getElementById("list").appendChild(createElementLi); //adds nand displays the combined element and task to the current list
   // createElementLi.appendChild(elementsInputbox);
-  createElementLi.appendChild(newTextNode); //adds the the new task to the newlist element(bullet)
+  createElementLi.appendChild(createSpanElement); //adds the the new task to the newlist element(bullet)
   createElementLi.appendChild(deleteButtonElement); //adds delete btn to the li
   createElementLi.appendChild(editButtonElement);
   createElementLi.appendChild(checkboxElement);
   todos.push(usersInput); //adds the new input to an array
-if(deleteButtonElement=='click'){
-  alert('delete?')
-}
-else{
+
   deleteButtonElement.addEventListener('click', e =>{
+ confirmation = prompt('are you shure you wanna delete?');
+ if (confirmation=="yes"){
     const removeElement= e.target.parentNode;
     console.log(removeElement);
      removeElement.parentNode.removeChild(removeElement);
- })
 }
+else return;
+
+ })
+
+
  editButtonElement.addEventListener('click', e =>{
-   const editElement = e.target.parentNode
-   console.log(editElement);
-  let newEditElememt = editElement.setAttribute("contenteditable", "True");
-  // let editInputBox = document.createElement('input')
-  // let edit = editInputBox.appendChild(editElement);
-  // editElement.setAttribute("contenteditable", "True");
-    // let   promptEdit = prompt('edit:' );
-    // let newInput = document.createTextNode(promptEdit);
-    editElement.replaceChild(newEditElememt, editElement.firstElementNode);
-    // console.log(todosArray); //adds the new input to an array
+      const editElement = e.target.parentNode;
+    let ul = editElement.parentNode;
+   let   promptEdit = prompt('edit:' );
+   let newInput = document.createTextNode(promptEdit);
+   let todosArray = editElement.replaceChild(newInput, editElement.firstChild);
+   console.log(todosArray); //adds the new input to an array
 })
 
 
