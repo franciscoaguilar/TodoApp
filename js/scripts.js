@@ -3,9 +3,9 @@ const myAddBtn = document.getElementById('btn'); //create a variable to be able 
 // const deleteBtn = document.getElementsByTagName('button');
 let todos = [];
 let todosCompleted = [];
-// function Task(task){
-//   this.task = task;
-// }
+function Task(task){
+  this.task = task;
+}
 
  myAddBtn.addEventListener('click', e =>{
 
